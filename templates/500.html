@@ -1,0 +1,46 @@
+<!-- templates/500.html -->
+{% extends "base.html" %}
+
+{% block title %}Server Error - Global News Hub{% endblock %}
+
+{% block content %}
+<div class="flex flex-col items-center justify-center min-h-[60vh]">
+    <div class="text-6xl font-bold text-red-600 mb-4">500</div>
+    <h1 class="text-2xl font-bold mb-2">Internal Server Error</h1>
+    <p class="text-gray-600 mb-2">Something went wrong on our end. We've been notified and are working on it.</p>
+    <p class="text-gray-500 mb-6 text-sm">Please try again in a few moments.</p>
+    <div class="flex space-x-4">
+        <a href="/" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors">
+            Return to Home
+        </a>
+        <button onclick="window.location.reload()" 
+                class="border border-red-600 text-red-600 px-6 py-2 rounded-lg hover:bg-red-50 transition-colors">
+            Try Again
+        </button>
+    </div>
+</div>
+
+<!-- Additional helpful links -->
+<div class="mt-12 max-w-2xl mx-auto">
+    <h2 class="text-lg font-semibold mb-4">In the meantime, you might want to:</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="/sources" 
+           class="block p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <h3 class="font-semibold mb-2">Browse News Sources</h3>
+            <p class="text-gray-600 text-sm">Explore our comprehensive list of news sources</p>
+        </a>
+        <a href="/category/general" 
+           class="block p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <h3 class="font-semibold mb-2">Read Top Stories</h3>
+            <p class="text-gray-600 text-sm">Check out the latest general news</p>
+        </a>
+    </div>
+</div>
+
+{% if debug %}
+<div class="mt-8 p-4 bg-gray-100 rounded-lg max-w-2xl mx-auto">
+    <h3 class="font-semibold mb-2">Error Details:</h3>
+    <pre class="text-sm text-gray-700 overflow-x-auto">{{ error }}</pre>
+</div>
+{% endif %}
+{% endblock %}

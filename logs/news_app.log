@@ -1,0 +1,6 @@
+2025-01-31 04:18:03,656 INFO: News App startup [in F:\Grapher\app.py:27]
+2025-01-31 04:18:05,477 INFO: News App startup [in F:\Grapher\app.py:27]
+2025-01-31 04:18:17,194 ERROR: Error in home route: object of type 'NoneType' has no len() [in F:\Grapher\app.py:124]
+2025-01-31 04:18:17,194 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in F:\Grapher\app.py:237]
+2025-01-31 04:19:20,172 ERROR: Error in home route: object of type 'NoneType' has no len() [in F:\Grapher\app.py:124]
+2025-01-31 04:19:20,172 ERROR: Server Error: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application. [in F:\Grapher\app.py:237]

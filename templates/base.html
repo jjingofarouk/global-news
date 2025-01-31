@@ -1,0 +1,64 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Global News Hub{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <a href="/" class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-globe text-blue-600 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold">Global News Hub</span>
+                    </a>
+                    <div class="hidden md:ml-6 md:flex md:space-x-4">
+                        {% for category in categories %}
+                        <a href="/category/{{ category }}" 
+                           class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md capitalize">
+                            {{ category }}
+                        </a>
+                        {% endfor %}
+                        <a href="/sources" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md">Sources</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <form action="/search" method="GET" class="relative">
+                        <input type="text" name="q" 
+                               class="rounded-full pl-10 pr-4 py-2 border focus:outline-none focus:border-blue-500"
+                               placeholder="Search news...">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-12 border-t">
+        <div class="max-w-7xl mx-auto px-4 py-6">
+            <div class="flex justify-between items-center">
+                <div class="text-gray-600">
+                    © 2025 Global News Hub. Powered by NewsAPI
+                </div>
+                <div class="flex space-x-4">
+                    {% for code, name in countries.items() %}
+                    <a href="/country/{{ code }}" class="text-gray-600 hover:text-blue-600">{{ name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

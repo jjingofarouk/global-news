@@ -1,0 +1,15 @@
+<!-- templates/429.html -->
+{% extends "base.html" %}
+
+{% block title %}Too Many Requests - Global News Hub{% endblock %}
+
+{% block content %}
+<div class="flex flex-col items-center justify-center min-h-[60vh]">
+    <div class="text-6xl font-bold text-yellow-600 mb-4">429</div>
+    <h1 class="text-2xl font-bold mb-2">Too Many Requests</h1>
+    <p class="text-gray-600 mb-6">We've hit our API rate limit. Please try again in a few minutes.</p>
+    <a href="/" class="bg-yellow-600 text-white px-6 py-2 rounded-lg hover:bg-yellow-700">
+        Return to Home
+    </a>
+</div>
+{% endblock %}
